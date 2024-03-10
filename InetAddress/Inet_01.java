@@ -11,7 +11,6 @@ public class Inet_01 {
             System.out.println(a.isLoopbackAddress());
             System.out.println(a.isMulticastAddress());
             System.out.println(a.isAnyLocalAddress());
-            System.out.println(a.getAddress());
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -25,4 +24,3 @@ public class Inet_01 {
 // false
 // false
 // false
-// [B@3f99bd52
