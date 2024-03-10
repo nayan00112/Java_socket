@@ -1,0 +1,77 @@
+`java.net.InetAddress` is a class in Java that represents an Internet Protocol (IP) address. It provides methods to work with both IPv4 and IPv6 addresses. Here are some key methods and their uses:
+
+1. getByName(String host):
+   => Use: Retrieves the InetAddress object corresponding to the given host name.
+   => Example: `InetAddress address = InetAddress.getByName("www.example.com");`
+
+2. getLocalHost():
+   => Use: Returns the InetAddress object representing the local host.
+   => Example: `InetAddress localHost = InetAddress.getLocalHost();`
+
+3. getHostAddress():
+   => Use: Returns the IP address string in textual representation.
+   => Example: `String ip = address.getHostAddress();`
+
+4. getHostName():
+   => Use: Returns the host name of the IP address.
+   => Example: `String hostName = address.getHostName();`
+
+5. getAddress():
+   => Use: Returns the raw IP address in byte array format.
+   => Example: `byte[] ipAddress = address.getAddress();`
+
+6. isReachable(int timeout):
+   => Use: Tests if the address is reachable within the specified timeout (in milliseconds).
+   => Example: `boolean reachable = address.isReachable(5000);`
+
+7. isLoopbackAddress():
+   => Use: Checks if the address is a loopback address.
+   => Example: `boolean isLoopback = address.isLoopbackAddress();`
+
+8. isMulticastAddress():
+   => Use: Checks if the address is a multicast address.
+   => Example: `boolean isMulticast = address.isMulticastAddress();`
+
+These methods allow you to obtain information about IP addresses, check their reachability, and perform various operations related to networking in Java.
+
+
+
+
+
+
+
+Certainly! Here's a simple Java code snippet that demonstrates the usage of `java.net.InetAddress`:
+
+```java
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+public class InetAddressExample {
+    public static void main(String[] args) {
+        try {
+            // Get InetAddress object for a given host name
+            InetAddress address = InetAddress.getByName("www.google.com");
+
+            // Print host name and IP address
+            System.out.println("Host Name: " + address.getHostName());
+            System.out.println("IP Address: " + address.getHostAddress());
+
+            // Check if the address is reachable
+            System.out.println("Is Reachable: " + address.isReachable(5000));
+
+            // Check if the address is a loopback address
+            System.out.println("Is Loopback Address: " + address.isLoopbackAddress());
+
+            // Check if the address is a multicast address
+            System.out.println("Is Multicast Address: " + address.isMulticastAddress());
+
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+In this example, the code retrieves the `InetAddress` object for the host "www.google.com", prints its host name and IP address, checks if it's reachable within 5 seconds, and checks if it's a loopback or multicast address. Make sure to handle exceptions appropriately in a production environment.
