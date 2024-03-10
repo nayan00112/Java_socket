@@ -1,0 +1,7 @@
+# Ignore compiled binaries
+*.class
+
+# Ignore log files
+p1/
+p2/
+p3/
